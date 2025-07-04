@@ -10,14 +10,14 @@
 
     $name = "Stefanie Hatcher";
     echo "Nome: $name <br>";
-    $length = strlen($name);
-    $cmp = strcmp($name, "Brian Le");
-    $index = strpos($name, "e");
-    $first = substr($name, 9, 5);
+    $length = strlen($name); //tamanho
+    $cmp = strcmp($name, "Brian Le"); //comparador em ordem alfabetica
+    $index = strpos($name, "e")
+    $first = substr($name, 9, 5); //pega apartir da 9 letra e pega as seguintes 5 letras
     $name = strtoupper($name);
 
     echo "Tamanho: $length<br>";
-    echo "Comparador: $cmp<br>";
+    echo "Comparador(cmp): $cmp<br>";
     echo "Index(posição da letra 'e'): $index<br>";
     echo "Primeira letra: $first<br>";
     echo "Nome Maiusculo: $name";
