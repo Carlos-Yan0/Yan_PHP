@@ -28,7 +28,11 @@
     echo "<h4>$frase_idade</h4>"
     ?>
 
-    <br><br><br><br><br>
+    <center>
+        <address>
+            Yan Carlos de Oliveira - Estudante - Desenvolvimento de sistemas
+        </address>
+    </center>
     
 </body>
 </html>

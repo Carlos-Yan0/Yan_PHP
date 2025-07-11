@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data com php</title>
+    <title>Tabuada com For em PHP</title>
 </head>
 <body>
     <?php
-    //função usada para definir fuso horário padrão
-    date_default_timezone_set('America/Los_Angeles');
-    //Manipulando HTML e PHP
-    $data_hoje = date("d/m/y", time());
+
+    for($i = 1; $i <= 10; $i++){
+
+        for($j = 1; $j <= 10; $j++){
+            echo "$i X $j = ". $i * $j ."<br/>";
+        }
+        echo "<br/>";
+    }
+
+
     ?>
-    <p align="center">Hoje é dia <?php echo $data_hoje; ?></p>
-    <center>
+
+<center>
         <address>
             Yan Carlos de Oliveira - Estudante - Desenvolvimento de sistemas
         </address>
     </center>
-    
 </body>
 </html>
