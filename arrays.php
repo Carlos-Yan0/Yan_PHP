@@ -14,6 +14,12 @@
     echo "<br/><br/>";
     var_dump($dias); //quantidade de itens da lista
     ?>
+
+<center>
+        <address>
+            Yan Carlos de Oliveira - Estudante - Desenvolvimento de sistemas
+        </address>
+    </center>
     
 </body>
 </html>

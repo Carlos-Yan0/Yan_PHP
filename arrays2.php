@@ -20,7 +20,7 @@
         echo "SHIFT: "; print_r($estados);
         echo "<hr>Extrai um elemento do final do array<br>";
         array_pop($estados);
-        echo "POP: "print_r($estados);
+        echo "POP: "; print_r($estados);
         echo "<hr>PUSH: Adiciona um ou mais elementos no final de um array<br>";
         array_push($estados, "pr");
         echo "PUSH: "; print_r($estados);
@@ -37,5 +37,11 @@
 
 
     ?>
+
+<center>
+        <address>
+            Yan Carlos de Oliveira - Estudante - Desenvolvimento de sistemas
+        </address>
+    </center>
 </body>
 </html>

@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>While em PHP</title>
+    <title>Foreach em PHP</title>
 </head>
 <body>
-
     <?php
-    $i = 1;
-    while($i <= 10){
-        echo $i
-        $i++
-    }
-    ?>
+        $cores = array("Amarelo", "Vermelho", "Verde", "Azul");
+        foreach($cores as $cor){
+            echo $cor. "<br>";
+        }
     
-    <center>
+    ?>
+
+<center>
         <address>
             Yan Carlos de Oliveira - Estudante - Desenvolvimento de sistemas
         </address>
     </center>
+    
 </body>
 </html>
