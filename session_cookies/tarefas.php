@@ -25,8 +25,9 @@ include "banco.php";
             } else {
                     $tarefa['concluida'] = '';
             }
-        $_SESSION['lista_tarefas'][] = $tarefa;
-}
+//         $_SESSION['lista_tarefas'][] = $tarefa;
+            gravar_tarefa($conexao, $tarefa);
+ }
 
     // if (array_key_exists('lista_tarefas', $_SESSION)) {
     //     $lista_tarefas = $_SESSION['lista_tarefas'];
@@ -35,15 +36,7 @@ include "banco.php";
     // }
     $lista_tarefas = buscar_tarefas($conexao);
 
-    function buscar_tarefas($conexao){
-        $sqlBusca = 'SELECT * FROM tarefas';
-        $resultado = mysqli_query($conexao, $sqlBusca);
-        $tarefas = array();
-        while ($tarefa = mysqli_fetch_assoc($resultado)){
-            $tarefas[] = $tarefa;
-        }
-        return $tarefas;
-    }
+    
 
 include "template.php"
 ?>
