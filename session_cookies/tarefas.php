@@ -1,45 +1,49 @@
-<?php  session_start();  ?>
+<?php
+session_start();
+include "banco.php";
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Tarefas</title>
-</head>
-<body>
-    <h1>Gerenciador de Tarefas</h1>
-    <!-- Restante do code -->
-    
-    <form action="">
-        <fieldset>
-            <legend>Nova Tarefa</legend>
-            <label>
-                Tarefa:
-                <input type="text" name="nome">
-            </label>
-            <input type="submit" value="Cadastrar">
-        </fieldset>
-    </form>
-    <?php
-        $lista_tarefas = array();
-            if(isset($_GET['nome'])){
-                $_SESSION['lista_tarefas'][] = $_GET['nome'];
-            }
-            if(isset($_SESSION['lista_tarefas'])){
-                $lista_tarefas = $_SESSION['lista_tarefas'];
-            }
-    ?>
+    if (isset($_GET['nome']) && $_GET['nome'] != '') {
+        $tarefa = array();
 
-    <table>
-        <tr>
-            <th>Tarefas</th>
-        </tr>
-        <?php foreach ($lista_tarefas as $tarefa) : ?>
-        <tr>
-            <td><?php echo $tarefa; ?></td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
-</body>
-</html>
+        $tarefa['nome'] = $_GET['nome'];
+
+            if (isset($_GET['descricao'])) {
+                $tarefa['descricao'] = $_GET['descricao'];
+            } else {
+                $tarefa['descricao'] = '';
+            }
+
+            if (isset($_GET['prazo'])) {
+                $tarefa['prazo'] = $_GET['prazo'];
+            } else {
+                   $tarefa['prazo'] = '';
+            }
+        $tarefa['prioridade'] = $_GET['prioridade'];
+
+            if (isset($_GET['concluida'])) {
+                $tarefa['concluida'] = $_GET['concluida'];
+            } else {
+                    $tarefa['concluida'] = '';
+            }
+        $_SESSION['lista_tarefas'][] = $tarefa;
+}
+
+    // if (array_key_exists('lista_tarefas', $_SESSION)) {
+    //     $lista_tarefas = $_SESSION['lista_tarefas'];
+    // } else {
+    //     $lista_tarefas = [];
+    // }
+    $lista_tarefas = buscar_tarefas($conexao);
+
+    function buscar_tarefas($conexao){
+        $sqlBusca = 'SELECT * FROM tarefas';
+        $resultado = mysqli_query($conexao, $sqlBusca);
+        $tarefas = array();
+        while ($tarefa = mysqli_fetch_assoc($resultado)){
+            $tarefas[] = $tarefa;
+        }
+        return $tarefas;
+    }
+
+include "template.php"
+?>
