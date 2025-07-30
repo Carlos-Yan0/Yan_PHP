@@ -1,0 +1,44 @@
+.container{
+background-color: lightgray;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 70vh;
+padding: 20px 30px;
+border-radius: 16px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.container h2, .container1 p{
+    text-align: center;
+    margin-top: 5px;
+}
+.container label{
+    text-align: left;
+    margin-top: 30px;
+}
+.form-control{
+    width: 80%;
+    align-items: center;
+}
+#id{
+    margin-right: 15px;
+}
+.inserirID{
+    display: flex;
+    justify-content: center;
+}
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.form input{
+    width: 100%;
+}
+.form button{
+    margin-top: 20px;
+}

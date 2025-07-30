@@ -1,0 +1,33 @@
+h2{
+    text-align: center;
+    margin-top: 15px;
+}
+.container{
+    width: 90%;
+    height: 75vh;
+    background-color: lightgray;
+    border-radius: 16px;
+    overflow-y: auto;
+}
+.container th{
+    background-color: lightgray;
+}
+.table th{
+    border-bottom: 1px solid black;
+    width: 20%;
+    text-align: center;
+}
+.table td{
+    border-bottom: 1px solid black;
+}
+.container table{
+    width: 100%;
+}
+.container td{
+    width: 20%;
+    text-align: center;
+    background-color: lightgray;
+}
+body{
+    overflow-y: hidden;
+}
