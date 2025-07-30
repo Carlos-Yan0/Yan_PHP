@@ -25,7 +25,7 @@
 
         try{
             $stmt->execute();
-            echo "Cliente atualizado com sucesso!";
+            header("Location: atualizarCliente.php?sucesso=1");
         }catch(PDOException $e){
             error_log("Erro ao atualizar cliente: ".$e->getMessage());
             echo "Erro ao atualizar registro.";

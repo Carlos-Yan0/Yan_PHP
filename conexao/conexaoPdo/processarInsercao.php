@@ -14,10 +14,13 @@
 
         try{
             $stmt->execute();
-            echo "Cliente cadastrado com sucesso!";
+            header("Location: inserirCliente.php?sucesso=1");
+            exit;
+            
         }catch(PDOException $e){
             error_log("Erro ao inserir cliente:".$e->getMessage());
             echo "Erro ao cadastrar cliente.";
+            exit;
         }
     }
 ?>

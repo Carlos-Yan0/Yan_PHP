@@ -16,7 +16,7 @@
 
         try{
             $stmt->execute();
-            echo "Cliente excluido com sucesso";
+            header("Location: deletarCliente.php?sucesso=1");
         }catch(PDOException $e){
             error_log("Erro ao excluir cliente:". $e->getMessage());
             echo "Erro ao excluir cliente.";
