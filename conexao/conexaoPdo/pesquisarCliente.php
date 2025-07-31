@@ -18,10 +18,10 @@
 
     //Escolha entre busca por ID ou nome e faz a consulta diretamente
     if(is_numeric($busca)){
-        $stmt = $conexao->prepare("SELECT ID_cliente, nome, endereco, telefone, email FROM cliente WHERE ID_cliente = :id");
+        $stmt = $conexao->prepare("SELECT id_cliente, nome, endereco, telefone, email FROM cliente WHERE id_cliente = :id");
         $stmt->bindParam(":id", $busca, PDO::PARAM_INT);
     }else{
-        $stmt = $conexao->prepare("SELECT ID_cliente, nome, endereco, telefone, email FROM cliente WHERE nome LIKE :nome");
+        $stmt = $conexao->prepare("SELECT id_cliente, nome, endereco, telefone, email FROM cliente WHERE nome LIKE :nome");
         $buscaNome = "%$busca%";
         $stmt->bindParam(":nome", $buscaNome, PDO::PARAM_STR);
     }
@@ -52,12 +52,12 @@
             </tr>
             <?php foreach($clientes as $cliente): ?>
                 <tr>
-                    <td><?=htmlspecialchars($cliente['ID_cliente'])?></td>
+                    <td><?=htmlspecialchars($cliente['id_cliente'])?></td>
                     <td><?=htmlspecialchars($cliente['nome'])?></td>
                     <td><?=htmlspecialchars($cliente['endereco'])?></td>
                     <td><?=htmlspecialchars($cliente['telefone'])?></td>
                     <td><?=htmlspecialchars($cliente['email'])?></td>
-                    <td><a href="atualizarCliente.php?id=<?=$cliente['ID_cliente']?>">Editar</a></td>
+                    <td><a href="atualizarCliente.php?id=<?=$cliente['id_cliente']?>">Editar</a></td>
                 </tr>
                 <?php endforeach; ?>
         </table>

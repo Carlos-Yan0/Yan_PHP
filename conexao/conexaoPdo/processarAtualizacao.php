@@ -14,7 +14,7 @@
             die("Erro: ID invalido ou e-mail incorreto.");
         }
 
-        $sql = "UPDATE cliente SET nome=:nome,endereco=:endereco,telefone=:telefone,email=:email WHERE ID_cliente = :id";
+        $sql = "UPDATE cliente SET nome=:nome,endereco=:endereco,telefone=:telefone,email=:email WHERE id_cliente = :id";
         
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":id", $id, PDO::PARAM_INT);

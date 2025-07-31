@@ -9,7 +9,7 @@
     $msgErro = "";
 
     function buscarClientePorId($idCliente, $conexao){
-        $stmt = $conexao->prepare("SELECT ID_cliente, nome, endereco, telefone, email FROM cliente WHERE ID_cliente = :id");
+        $stmt = $conexao->prepare("SELECT id_cliente, nome, endereco, telefone, email FROM cliente WHERE id_cliente = :id");
         $stmt->bindParam(":id", $idCliente, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch();
@@ -68,7 +68,7 @@
         <?php else: ?>
                 <!-- Se um cliente foi encontrado, exibe o formulario preenchido -->
                 <form action="processarAtualizacao.php" method="POST" class="form">
-                    <input type="hidden" name="id_cliente" value="<?=htmlspecialchars($cliente['ID_cliente'])?>">
+                    <input type="hidden" name="id_cliente" value="<?=htmlspecialchars($cliente['id_cliente'])?>">
 
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($cliente['nome'])?>" readonly onclick="habilitarEdicao('nome')" class="form-control">

@@ -10,7 +10,7 @@
             die("Erro:ID invalido.");
         }
         
-        $sql = "DELETE FROM cliente WHERE ID_cliente = :id";
+        $sql = "DELETE FROM cliente WHERE id_cliente = :id";
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":id",$id,PDO::PARAM_INT);
 
