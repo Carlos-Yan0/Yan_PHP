@@ -62,7 +62,7 @@ try {
             $foto = redimensionarImagem($_FILES['foto']['tmp_name'], 300, 400); //tmp_name É O CAMINHO TEMPORARIO
 
             //INSERE NO BANCO DE DADOS USANDO SQL PREPARADA
-            $sql = "INSERT INTO funcionarios (nome, telefone, nome_foto, tipo_foto, foto)VALUES(:nome, :telefone, :nome_foto, :tipo_foto, :foto)";
+            $sql = "INSERT INTO funcionario (nome, telefone, nome_foto, tipo_foto, foto)VALUES(:nome, :telefone, :nome_foto, :tipo_foto, :foto)";
 
             $stmt = $pdo->prepare($sql); //PREPARA A QUERY PARA EVITAR ATAQUE SQL INJECTION
             $stmt->bindParam(':nome', $nome); //LIGA OS PARAMETROS AS VARIAVEIS
