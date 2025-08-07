@@ -59,7 +59,11 @@ try {
             <?php endforeach; ?>
     </ul>
 
-
+    <center>
+        <address>
+            Yan Carlos de Oliveira - Estudante - Desenvolvimento de sistemas
+        </address>
+    </center>
 
 </body>
 </html>

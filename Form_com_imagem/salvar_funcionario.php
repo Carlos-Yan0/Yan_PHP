@@ -95,5 +95,11 @@ try {
 <body>
     <h1>Lista de Imagens</h1>
     <a href="consulta_funcionario.php">Listar Funcionarios!</a>
+
+    <center>
+        <address>
+            Yan Carlos de Oliveira - Estudante - Desenvolvimento de sistemas
+        </address>
+    </center>
 </body>
 </html>
