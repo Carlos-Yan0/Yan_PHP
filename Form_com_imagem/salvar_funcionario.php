@@ -8,7 +8,7 @@ function redimensionarImagem($imagem, $largura, $altura)
 
     //CRIA UMA NOVA IMAGEM EM BRANCO COM AS NOVAS DIMENSOES
     //imagecreatetruecolor() CRIA UMA NOVA IMAGEM EM BRANCO EM ALTA QUALIDADE
-    $novaImagem = imagecreatetruecolor($largura, $altura);
+    $novaImagem = imagecreatetruecolor( $largura, $altura);
 
     //CARREGA A IMAGEM ORIGINAL (JPEG) A PARTIR DO ARQUIVO 
     //imagecreatefromjpeg() CRIA UMA IMAGEM PHP A APARTIR DE UM JPEG
@@ -46,17 +46,17 @@ $password = '';
 
 try {
     //CONEXAO COM BANCO DE DADOS USANDO PDO
-    $pdo = new PDO("msql:host = $host; dbname = $dbname", $usernmae, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname",$username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //DEFINE QUE ERROS VAO LANCAR EXCECOES
 
     //VERIFICA SE FOI UM POST E SE TEM ARQUIVO 'foto'
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto'])) {
 
-        if ($_files['foto']['error'] == 0) {
+        if ($_FILES['foto']['error'] == 0) {
             $nome = $_POST['nome']; //PEGA O NOME DO FUNCIONARIO
             $telefone = $_POST['telefone']; //PEGA O TELEFONE DO FUNCIONARIO
-            $nomeFoto = $_files['foto']['name']; //PEGA O NOME ORIGINAL DO ARQUIVO
-            $tipoFoto = $_files['foto']['type']; //PEGA O TIPO MIME DO ARQUIVO
+            $nomeFoto = $_FILES['foto']['name']; //PEGA O NOME ORIGINAL DO ARQUIVO
+            $tipoFoto = $_FILES['foto']['type']; //PEGA O TIPO MIME DO ARQUIVO
 
             // REDIMENSIONA A IMAGEM
             $foto = redimensionarImagem($_FILES['foto']['tmp_name'], 300, 400); //tmp_name É O CAMINHO TEMPORARIO
@@ -82,6 +82,18 @@ try {
         }
     }
 } catch (PDOException $e) {
-    echo "Erro" . $e->getMessage(); //mostra o erro se houver;
+    echo "Erro: " . $e->getMessage(); //mostra o erro se houver;
 }
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Imagens</title>
+</head>
+<body>
+    <h1>Lista de Imagens</h1>
+    <a href="consulta_funcionario.php">Listar Funcionarios!</a>
+</body>
+</html>
